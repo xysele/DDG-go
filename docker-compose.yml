@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  ddg-chat-go:
+    container_name: ddg-chat-go 
+    image: lmyself/ddg-chat-go:latest
+    ports:
+      - "8787:8787"
+    environment:
+      API_PREFIX: "/"
+      MAX_RETRY_COUNT: 3
+      RETRY_DELAY: 5000
+    restart: unless-stopped
